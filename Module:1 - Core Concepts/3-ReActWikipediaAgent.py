@@ -3,9 +3,6 @@ from dotenv import load_dotenv
 from langgraph.prebuilt import create_react_agent
 from langchain.prompts import ChatPromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI as Gemini
-
-# --- CORRECTED IMPORTS ---
-# Import the specific tool you need
 from langchain_community.tools import WikipediaQueryRun
 from langchain_community.utilities import WikipediaAPIWrapper
 
