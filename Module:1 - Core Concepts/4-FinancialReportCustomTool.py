@@ -42,3 +42,18 @@ agent = create_react_agent(
 
 results = agent.invoke({"messages": [{"role": "user", "content": "Generate a financial report for 'Tech Innovators Inc.' with a revenue of $5,000,000 and expenses of $3,500,000."}]})
 print(results["messages"][-1].content)
+
+print("\n--- Full Conversation ---")
+for message in results["messages"]:
+    # Check the type of message and print its role and content
+    if hasattr(message, 'role'):
+        print(f"Role: {message.role}\nContent:\n{message.content}\n")
+    # ToolMessages have a 'name' instead of a 'role'
+    elif hasattr(message, 'name'):
+        print(f"Tool: {message.name}\nContent:\n{message.content}\n")
+    
+    # You can also check for tool calls in AIMessages for more detail
+    if hasattr(message, 'tool_calls') and message.tool_calls:
+        print(f"Tool Calls: {message.tool_calls}\n")
+    
+    print("---")
