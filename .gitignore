@@ -15,3 +15,6 @@ Databases/
 Course/lc-academy-env/
 .DS_Store
 Course/.DS_Store
+
+# Ignore LangGraph runtime cache folders
+Course/**/.langgraph_api/
