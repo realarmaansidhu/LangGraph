@@ -11,3 +11,7 @@ __pycache__/
 deeplake/
 lib/
 Databases/
+# Ignore nested Course virtualenv and macOS files
+Course/lc-academy-env/
+.DS_Store
+Course/.DS_Store
